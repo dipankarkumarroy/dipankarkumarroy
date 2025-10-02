@@ -1,7 +1,7 @@
 # Hi there, I'm Dipankar Kumar Roy! 👋
 
 ## About Me
-- 🎓 Computer Science Student(B.Sc.)
+- 🎓 Computer Science Student(M.Sc.)
 - 💼 Full Stack Web Developer
 - 🌱 Currently learning DevOps and Cloud Computing
 - 👯 Looking to collaborate on interesting projects
