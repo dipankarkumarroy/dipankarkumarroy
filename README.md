@@ -13,14 +13,9 @@
 - 🛠️ Tools: Git, Docker, VS Code, MongoDB, PostgreSQL
 
 ## Projects
-- [WebApps](https://project.dipkumar.com): All web application here.
+- [WebApps](https://dipankarkumarroy.github.io/): All web application here.
 
 ## Connect with Me
 - [Telegram](https://t.me/dipankarkumarroy)
 
-## Top Languages
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=dipankarkumarroy&layout=compact&theme=dark)
-
-## Visitors
-![Visitor Count](https://profile-counter.glitch.me/dipankarkumarroy/count.svg)
 
