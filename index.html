@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dipankar Kumar Roy — Field Notes & Portfolio</title>
+  
+  <!-- Handwritten Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Patrick+Hand&family=Schoolbell&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #1e293b;
+      --pen-blue: #1d4ed8;
+      --paper-bg: #fdfbf7;
+      --line-blue: #d4e2ee;
+      --margin-red: #f87171;
+      --pencil: #475569;
+      --highlighter: rgba(254, 240, 138, 0.65);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #e9ecef;
+      background-image: 
+        radial-gradient(#cfd8dc 1px, transparent 1px),
+        radial-gradient(#cfd8dc 1px, #e9ecef 1px);
+      background-size: 24px 24px;
+      font-family: 'Patrick Hand', cursive, sans-serif;
+      color: var(--ink);
+      padding: 30px 15px;
+      line-height: 32px;
+      font-size: 19px;
+    }
+
+    /* Lined Paper Page */
+    .notebook-page {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: var(--paper-bg);
+      background-image: 
+        linear-gradient(90deg, transparent 72px, var(--margin-red) 72px, var(--margin-red) 74px, transparent 74px),
+        linear-gradient(var(--line-blue) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 32px;
+      padding: 48px 30px 60px 92px;
+      box-shadow: 
+        0 1px 3px rgba(0,0,0,0.08),
+        0 10px 25px rgba(0,0,0,0.12);
+      border-radius: 4px;
+      position: relative;
+      transform: rotate(-0.3deg);
+    }
+
+    /* Binder Holes */
+    .binder-holes {
+      position: absolute;
+      left: 22px;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      pointer-events: none;
+    }
+
+    .hole {
+      width: 22px;
+      height: 22px;
+      background: #cfd8dc;
+      border-radius: 50%;
+      box-shadow: inset 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    /* Sticky Note */
+    .sticky-note {
+      position: absolute;
+      top: -12px;
+      right: 24px;
+      background: #fef08a;
+      color: #713f12;
+      font-family: 'Caveat', cursive;
+      font-size: 20px;
+      padding: 10px 16px;
+      box-shadow: 2px 4px 8px rgba(0,0,0,0.15);
+      transform: rotate(3deg);
+      border-bottom-right-radius: 20px 4px;
+    }
+
+    h1 {
+      font-family: 'Caveat', cursive;
+      font-size: 46px;
+      line-height: 48px;
+      color: var(--pen-blue);
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      color: var(--pencil);
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-family: 'Caveat', cursive;
+      font-size: 32px;
+      line-height: 36px;
+      margin-top: 28px;
+      margin-bottom: 8px;
+      color: var(--ink);
+      display: inline-block;
+      border-bottom: 2px dashed #94a3b8;
+    }
+
+    p {
+      margin-bottom: 16px;
+    }
+
+    .highlight {
+      background-color: var(--highlighter);
+      padding: 0 4px;
+      border-radius: 3px;
+    }
+
+    /* Hand-Drawn Item Cards */
+    .project-box {
+      border: 1.5px solid #64748b;
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+      padding: 12px 18px;
+      margin: 18px 0;
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    .project-box h3 {
+      font-family: 'Caveat', cursive;
+      font-size: 26px;
+      line-height: 28px;
+      color: var(--pen-blue);
+    }
+
+    /* Tags */
+    .tag {
+      display: inline-block;
+      border: 1px solid #94a3b8;
+      border-radius: 12px;
+      padding: 0 8px;
+      font-size: 15px;
+      line-height: 20px;
+      margin-right: 6px;
+      background: #fff;
+    }
+
+    /* Lists */
+    ul {
+      list-style-type: none;
+      padding-left: 4px;
+    }
+
+    ul li::before {
+      content: "✦ ";
+      color: var(--pen-blue);
+    }
+
+    /* Links & Buttons */
+    a {
+      color: var(--pen-blue);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      background-color: var(--highlighter);
+    }
+
+    .footer-note {
+      margin-top: 36px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line-blue);
+      font-family: 'Caveat', cursive;
+      font-size: 22px;
+      text-align: center;
+      color: var(--pencil);
+    }
+
+    @media (max-width: 600px) {
+      .notebook-page {
+        padding: 40px 18px 40px 52px;
+        background-image: 
+          linear-gradient(90deg, transparent 40px, var(--margin-red) 40px, var(--margin-red) 42px, transparent 42px),
+          linear-gradient(var(--line-blue) 1px, transparent 1px);
+      }
+      .binder-holes {
+        left: 10px;
+      }
+      .hole {
+        width: 16px;
+        height: 16px;
+      }
+      h1 {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="notebook-page">
+    <!-- Punch Holes -->
+    <div class="binder-holes" aria-hidden="true">
+      <div class="hole"></div>
+      <div class="hole"></div>
+      <div class="hole"></div>
+      <div class="hole"></div>
+    </div>
+
+    <!-- Paper Sticky Tag -->
+    <div class="sticky-note">Available for collab ✎</div>
+
+    <!-- Header Section -->
+    <header>
+      <h1>Dipankar Kumar Roy</h1>
+      <p class="subtitle">M.Sc. Computer Science • Embedded Systems • Applied Mathematics</p>
+    </header>
+
+    <!-- Brief Bio -->
+    <section>
+      <h2>About Me</h2>
+      <p>
+        Hi there! I am an engineer and researcher exploring the bridge between <span class="highlight">low-level hardware</span>, computational mathematics, and interactive software. I spend my time building circuit simulators, tinkering with microcontrollers, writing geometry proofs, and teaching.
+      </p>
+    </section>
+
+    <!-- Skills Checklist -->
+    <section>
+      <h2>Field Notes & Toolkit</h2>
+      <ul>
+        <li><strong>Languages:</strong> C, C++, Python, JavaScript, Fortran, 8051 Assembly</li>
+        <li><strong>Hardware & Embedded:</strong> ESP32 (WROOM), MicroPython, I2S Audio, TFT Displays (ILI9341), Sensors</li>
+        <li><strong>Computer Vision & ML:</strong> OpenCV, MobileNet-SSD, Edge TPU, Logic Simulations</li>
+        <li><strong>Academic & Typesetting:</strong> LaTeX, Discrete Mathematics, Numerical Computing</li>
+      </ul>
+    </section>
+
+    <!-- Projects -->
+    <section>
+      <h2>Selected Projects</h2>
+
+      <div class="project-box">
+        <h3>1. LogicSim — Interactive Digital Circuit Lab</h3>
+        <p>A web canvas-based digital logic gate simulator allowing real-time design of flip-flops, multiplexers, and logic analyzer visualization.</p>
+        <span class="tag">JavaScript</span>
+        <span class="tag">HTML5 Canvas</span>
+        <span class="tag">Digital Logic</span>
+      </div>
+
+    </section>
+
+    <!-- Research / Papers -->
+    <section>
+      <h2>Research & Publications</h2>
+      <ul>
+        <li>
+          <em>"General equation of Ellipse"</em> — Published on Academia.edu & Zenodo.
+        </li>
+        <li>
+          <em>"A new way to find height of triangle"</em> — Published research note on Zenodo.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Contact Info -->
+    <section>
+      <h2>Get In Touch</h2>
+      <p>
+        Got a question, circuit puzzle, or research idea? Drop a note:
+      </p>
+      <p>
+        ✉ <strong>Email:</strong> <a href="mailto:mail.dipkumar@gmail.com">mail.dipkumar@gmail.com</a><br>
+        🌐 <strong>Website:</strong> <a href="https://dkroy.com" target="_blank" rel="noopener">dkroy.com</a><br>
+        ✎ <strong>GitHub:</strong> <a href="https://github.com/dipankarkumarroy">github.com/dipankarkumarroy</a>
+      </p>
+    </section>
+
+    <footer class="footer-note">
+      ~ • Dipankar Kumar Roy • ~
+    </footer>
+  </main>
+
+</body>
+</html>
